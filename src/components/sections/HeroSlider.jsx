@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 
 function HeroSlider({ updates }) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % updates.length)
@@ -18,22 +17,16 @@ function HeroSlider({ updates }) {
 
   // Auto-play functionality
   useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(nextSlide, 5000)
-      return () => clearInterval(interval)
-    }
-  }, [isPaused])
+    const interval = setInterval(nextSlide, 3000)
+    return () => clearInterval(interval)
+  }, [currentIndex])
 
   if (!updates || updates.length === 0) return null
 
   const currentUpdate = updates[currentIndex]
 
   return (
-    <div
-      className="hero-slider"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="hero-slider">
       <div className="slider-container">
         {updates.map((update, index) => (
           <div

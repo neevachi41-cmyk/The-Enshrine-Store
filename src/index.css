@@ -208,7 +208,7 @@ body.dark-mode .hero-slider {
   justify-content: center;
   align-items: center;
   padding: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   opacity: 0;
   pointer-events: none;
   z-index: 1;
@@ -1021,12 +1021,20 @@ body.dark-mode .footer a {
   color: #d8cfe3;
 }
 
+body.dark-mode .footer-logo + p {
+  color: var(--muted);
+}
+
+body.dark-mode .footer-logo + div a {
+  color: var(--ink);
+}
+
 .foot {
   max-width: 1250px;
   margin: auto;
   padding: 55px 24px;
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 35px;
 }
 
@@ -1065,6 +1073,22 @@ body.dark-mode .foot a {
 
 .foot h4 {
   margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.foot a:hover {
+  color: var(--p);
+  text-decoration: underline;
+}
+
+body.dark-mode .foot a:hover {
+  color: var(--p2);
+}
+
+.footer-logo + div a:hover {
+  transform: scale(1.1);
+  text-decoration: none;
 }
 
 .copyright {
@@ -1279,6 +1303,11 @@ body.dark-mode .field select {
 
   .custom-banner {
     display: block;
+  }
+
+  .foot {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
   .custom-banner .btn {

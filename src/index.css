@@ -557,6 +557,11 @@ body.dark-mode .btn.primary {
   box-shadow: 0 10px 24px rgba(111, 70, 199, .4);
 }
 
+body.dark-mode .custom-banner .btn.primary {
+  background: var(--ink);
+  color: white;
+}
+
 .btn.primary:hover {
   transform: translateY(-2px);
 }
@@ -698,6 +703,15 @@ body.dark-mode .hero-card {
   margin: 0;
   color: #d8cfe3;
   font-size: 13px;
+}
+
+body.dark-mode .custom-banner {
+  background: var(--lav2);
+  color: var(--ink);
+}
+
+body.dark-mode .custom-banner p {
+  color: var(--muted);
 }
 
 .grid {

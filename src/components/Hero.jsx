@@ -1,6 +1,6 @@
 import HeroSlider from './sections/HeroSlider'
 
-function Hero({ themeData, onCustomClick, onShopClick, onViewClick }) {
+function Hero({ themeData, onCustomClick }) {
   const sliderImages = [
     {
       id: 1,
@@ -31,7 +31,7 @@ function Hero({ themeData, onCustomClick, onShopClick, onViewClick }) {
 
   return (
     <section className="hero">
-      <HeroSlider updates={sliderImages} onShopClick={onShopClick} onViewClick={onViewClick} />
+      <HeroSlider updates={sliderImages} />
     </section>
   )
 }

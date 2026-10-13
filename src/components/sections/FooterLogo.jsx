@@ -1,7 +1,7 @@
 function FooterLogo() {
   return (
     <div>
-      <img className="footer-logo" src="/assets/Enshrine Purple Gift Store Logo.png" alt="Enshrine" />
+      <img className="footer-logo" src="/assets/logo.png" alt="Enshrine" />
       <p>Little things. Big vibes.</p>
     </div>
   )

@@ -125,8 +125,18 @@ body.dark-mode header {
   color: var(--ink);
 }
 
+body.dark-mode .iconbtn {
+  background: var(--lav2);
+  color: var(--ink);
+}
+
 .iconbtn:hover {
   background: var(--lav);
+}
+
+body.dark-mode .iconbtn:hover {
+  background: var(--p);
+  color: white;
 }
 
 .theme-btn {
@@ -141,16 +151,27 @@ body.dark-mode header {
   font-size: 12px;
   cursor: pointer;
   transition: .2s;
+  color: var(--ink);
+}
+
+body.dark-mode .theme-btn {
+  background: var(--lav2);
+  color: var(--ink);
 }
 
 .theme-btn:hover {
   background: var(--lav);
 }
 
+body.dark-mode .theme-btn:hover {
+  background: var(--p);
+  color: white;
+}
+
 .hero {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 0;
+  padding: 80px 24px 0;
   display: block;
 }
 
@@ -162,7 +183,7 @@ body.dark-mode header {
   overflow: hidden;
   background: linear-gradient(145deg, #f5f0fb, #eee6f8);
   transition: background 0.3s;
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 40px;
   border-radius: 36px;
 }
@@ -219,9 +240,8 @@ body.dark-mode .hero-slider {
 .slide-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  max-height: calc(100vh - 200px);
 }
 
 .slide-content {
@@ -608,6 +628,7 @@ body.dark-mode .hero p {
   font-weight: 700;
   cursor: pointer;
   transition: .2s;
+  color: var(--ink);
 }
 
 .btn.primary {
@@ -684,7 +705,7 @@ body.dark-mode .hero-card {
 }
 
 body.dark-mode .section {
-  background: var(--lav2);
+  background: transparent;
 }
 
 .updates-section {
@@ -692,7 +713,7 @@ body.dark-mode .section {
 }
 
 body.dark-mode .updates-section {
-  background: var(--lav);
+  background: transparent;
 }
 
 .section.compact {
@@ -704,7 +725,7 @@ body.dark-mode .updates-section {
 }
 
 body.dark-mode .product-section {
-  background: var(--lav2);
+  background: transparent;
 }
 
 .product-section:first-child {
@@ -761,6 +782,7 @@ body.dark-mode .section-head h2 {
   font-size: 13px;
   cursor: pointer;
   transition: background 0.3s;
+  color: var(--ink);
 }
 
 .cat-chip:hover,
@@ -812,6 +834,11 @@ body.dark-mode .custom-banner {
 
 body.dark-mode .custom-banner p {
   color: var(--muted);
+}
+
+body.dark-mode .custom-banner .btn.primary {
+  background: var(--ink);
+  color: white;
 }
 
 .grid {
@@ -911,10 +938,21 @@ body.dark-mode .tag {
   font-weight: 700;
   cursor: pointer;
   transition: .2s;
+  color: var(--ink);
+}
+
+body.dark-mode .smallbtn {
+  background: var(--lav2);
+  color: var(--ink);
 }
 
 .smallbtn:hover {
   background: var(--lav);
+}
+
+body.dark-mode .smallbtn:hover {
+  background: var(--p);
+  color: white;
 }
 
 .smallbtn.primary {
@@ -1067,6 +1105,10 @@ body.dark-mode .modal {
   box-shadow: 0 30px 90px rgba(0, 0, 0, .25);
 }
 
+body.dark-mode .modal-box {
+  background: var(--lav2);
+}
+
 .modal-head {
   display: flex;
   justify-content: space-between;
@@ -1080,6 +1122,11 @@ body.dark-mode .modal {
   width: 38px;
   height: 38px;
   cursor: pointer;
+  color: var(--ink);
+}
+
+body.dark-mode .close {
+  background: var(--lav2);
   color: var(--ink);
 }
 
@@ -1103,6 +1150,7 @@ body.dark-mode .modal {
 .field label {
   font-size: 12px;
   font-weight: 700;
+  color: var(--ink);
 }
 
 .field input,
@@ -1112,6 +1160,15 @@ body.dark-mode .modal {
   border-radius: 12px;
   padding: 12px;
   outline: none;
+  background: var(--white);
+  color: var(--ink);
+}
+
+body.dark-mode .field input,
+body.dark-mode .field textarea,
+body.dark-mode .field select {
+  background: var(--lav2);
+  color: var(--ink);
 }
 
 .field textarea {
@@ -1252,6 +1309,9 @@ body.dark-mode .modal {
   .hero-slider {
     min-height: 400px;
     height: calc(100vh - 60px);
+    margin-top: 16px;
+    margin-bottom: 32px;
+    border-radius: 24px;
   }
 
   .slide {

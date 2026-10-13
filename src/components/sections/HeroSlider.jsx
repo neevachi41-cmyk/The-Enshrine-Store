@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function HeroSlider({ updates, onShopClick, onViewClick }) {
+function HeroSlider({ updates }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
@@ -54,22 +54,6 @@ function HeroSlider({ updates, onShopClick, onViewClick }) {
                 }}
               />
             </div>
-            {index === currentIndex && (
-              <div className="slide-buttons">
-                <button
-                  className="btn primary slide-button"
-                  onClick={onShopClick}
-                >
-                  Shop
-                </button>
-                <button
-                  className="btn soft slide-button"
-                  onClick={onViewClick}
-                >
-                  View
-                </button>
-              </div>
-            )}
           </div>
         ))}
       </div>
@@ -81,18 +65,6 @@ function HeroSlider({ updates, onShopClick, onViewClick }) {
       <button className="slider-arrow next" onClick={nextSlide} aria-label="Next slide">
         ›
       </button>
-
-      {/* Dots Navigation */}
-      <div className="slider-dots">
-        {updates.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   )
 }

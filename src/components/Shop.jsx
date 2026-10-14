@@ -3,7 +3,7 @@ import CustomBanner from './sections/CustomBanner'
 import ProductSection from './sections/ProductSection'
 import AboutSection from './sections/AboutSection'
 
-function Shop({ products, categories, selectedCategory, onCategoryChange, onCustomClick, onProductClick }) {
+function Shop({ products, categories, selectedCategory, onCategoryChange, onCustomClick, onProductClick, onViewProduct }) {
   const cats = selectedCategory === 'all' ? categories : [selectedCategory]
 
   return (
@@ -28,6 +28,7 @@ function Shop({ products, categories, selectedCategory, onCategoryChange, onCust
             products={products}
             onCustomClick={onCustomClick}
             onProductClick={onProductClick}
+            onViewProduct={onViewProduct}
           />
         ))}
       </div>

@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard'
 
-function ProductSection({ category, products, onCustomClick, onProductClick }) {
+function ProductSection({ category, products, onCustomClick, onProductClick, onViewProduct }) {
   const categoryProducts = products.filter(p => p.cat === category)
 
   if (!categoryProducts.length) return null
@@ -19,6 +19,7 @@ function ProductSection({ category, products, onCustomClick, onProductClick }) {
             product={product}
             onCustomClick={onCustomClick}
             onProductClick={onProductClick}
+            onViewProduct={onViewProduct}
           />
         ))}
       </div>

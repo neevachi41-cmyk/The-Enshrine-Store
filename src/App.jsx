@@ -132,6 +132,7 @@ function App() {
             onCategoryChange={setSelectedCategory}
             onCustomClick={openCustom}
             onProductClick={openProductInNewWindow}
+            onViewProduct={viewProduct}
           />
           <ReviewsSection reviews={REVIEWS} />
         </main>
@@ -148,6 +149,7 @@ function App() {
             showToast('Demo catalog restored')
           }}
           onProductClick={openProductInNewWindow}
+          onViewProduct={viewProduct}
         />
       )}
 

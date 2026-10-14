@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function HeroSlider({ updates }) {
+function HeroSlider({ updates, onShopClick, onViewClick }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
@@ -46,6 +46,15 @@ function HeroSlider({ updates }) {
                   e.target.style.display = 'none'
                 }}
               />
+            </div>
+            <div className="slide-content">
+              <h2>{update.title}</h2>
+              <p>{update.description}</p>
+              <div className="slide-buttons">
+                <button className="btn primary slide-button" onClick={onShopClick}>
+                  {update.button}
+                </button>
+              </div>
             </div>
           </div>
         ))}

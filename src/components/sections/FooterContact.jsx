@@ -6,7 +6,7 @@ function FooterContact() {
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '20px', textDecoration: 'none' }}>
           📷
         </a>
-        <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '20px', textDecoration: 'none' }}>
+        <a href="https://wa.me/919021282176" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '20px', textDecoration: 'none' }}>
           💬
         </a>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '20px', textDecoration: 'none' }}>

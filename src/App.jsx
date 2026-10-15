@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 import Header from './components/Header'
 import UpdatesSection from './components/sections/UpdatesSection'
 import Shop from './components/Shop'
@@ -8,9 +10,11 @@ import CustomModal from './components/CustomModal'
 import ProductDetailPage from './components/ProductDetailPage'
 import SearchModal from './components/SearchModal'
 import AdminPanel from './components/AdminPanel'
+import About from './components/About'
 import { DEMO_PRODUCTS, CATS, THEME_DATA, UPDATES, REVIEWS } from './data'
 
 function App() {
+  const location = useLocation()
   const [products, setProducts] = useState(DEMO_PRODUCTS)
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [currentTheme, setCurrentTheme] = useState('female')
@@ -33,6 +37,9 @@ function App() {
     if (adminSession === '1') {
       setIsAdmin(true)
     }
+
+    // Initialize EmailJS
+    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY")
   }, [])
 
   const saveProducts = (newProducts) => {
@@ -64,12 +71,12 @@ function App() {
     document.body.style.overflow = 'auto'
   }
 
-  const addToCart = (product, quantity) => {
-    showToast(`${quantity}x ${product.name} added to cart`)
+  const addToCart = (product, quantity, color = 'White') => {
+    showToast(`${quantity}x ${product.name} (${color}) added to cart`)
   }
 
-  const buyNow = (product, quantity) => {
-    const msg = `Hello Enshrine!%0A%0AI want to order: ${encodeURIComponent(product.name)}%0AQuantity: ${quantity}%0APrice: ${encodeURIComponent(product.price)}%0ATotal: ${encodeURIComponent(product.price.replace('₹', '') * quantity)}%0A%0APlease confirm availability and payment details.`
+  const buyNow = (product, quantity, color = 'White') => {
+    const msg = `Hello Enshrine!%0A%0AI want to order: ${encodeURIComponent(product.name)}%0AColor: ${encodeURIComponent(color)}%0AQuantity: ${quantity}%0APrice: ${encodeURIComponent(product.price)}%0ATotal: ${encodeURIComponent(product.price.replace('₹', '') * quantity)}%0A%0APlease confirm availability and payment details.`
     window.open(`https://wa.me/919021282176?text=${msg}`, '_blank')
     showToast('Opening WhatsApp to place your order…')
     closeProductDetail()
@@ -114,46 +121,55 @@ function App() {
 
   return (
     <>
-      <Header
-        themeData={themeData}
-        currentTheme={currentTheme}
-        toggleTheme={toggleTheme}
-        onSearchClick={() => setShowSearchModal(true)}
-        onAdminClick={() => setShowAdmin(true)}
-      />
-      
-      {!showAdmin ? (
-        <main id="store">
-          <UpdatesSection updates={UPDATES} onShopClick={handleShopClick} onViewClick={handleViewClick} />
-          <Shop
-            products={products}
-            categories={CATS}
-            selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
-            onCustomClick={openCustom}
-            onProductClick={openProductInNewWindow}
-            onViewProduct={viewProduct}
-          />
-          <ReviewsSection reviews={REVIEWS} />
-        </main>
-      ) : (
-        <AdminPanel
-          products={products}
-          isAdmin={isAdmin}
-          onLogin={handleLogin}
-          onLogout={handleLogout}
-          onBack={() => setShowAdmin(false)}
-          onSaveProducts={saveProducts}
-          onResetProducts={() => {
-            saveProducts(DEMO_PRODUCTS)
-            showToast('Demo catalog restored')
-          }}
-          onProductClick={openProductInNewWindow}
-          onViewProduct={viewProduct}
+      {location.pathname !== '/about' && (
+        <Header
+          themeData={themeData}
+          currentTheme={currentTheme}
+          toggleTheme={toggleTheme}
+          onSearchClick={() => setShowSearchModal(true)}
+          onAdminClick={() => setShowAdmin(true)}
         />
       )}
 
-      <Footer />
+      <Routes>
+        <Route path="/" element={
+          <>
+            {!showAdmin ? (
+              <main id="store">
+                <UpdatesSection updates={UPDATES} onShopClick={handleShopClick} onViewClick={handleViewClick} />
+                <Shop
+                  products={products}
+                  categories={CATS}
+                  selectedCategory={selectedCategory}
+                  onCategoryChange={setSelectedCategory}
+                  onCustomClick={openCustom}
+                  onProductClick={openProductInNewWindow}
+                  onViewProduct={viewProduct}
+                />
+                <ReviewsSection reviews={REVIEWS} />
+              </main>
+            ) : (
+              <AdminPanel
+                products={products}
+                isAdmin={isAdmin}
+                onLogin={handleLogin}
+                onLogout={handleLogout}
+                onBack={() => setShowAdmin(false)}
+                onSaveProducts={saveProducts}
+                onResetProducts={() => {
+                  saveProducts(DEMO_PRODUCTS)
+                  showToast('Demo catalog restored')
+                }}
+                onProductClick={openProductInNewWindow}
+                onViewProduct={viewProduct}
+              />
+            )}
+
+            <Footer />
+          </>
+        } />
+        <Route path="/about" element={<About />} />
+      </Routes>
 
       {showProductDetail && selectedProduct && (
         <ProductDetailPage
@@ -168,11 +184,30 @@ function App() {
         <CustomModal
           title={customTitle}
           onClose={() => setShowCustomModal(false)}
-          onSubmit={(data) => {
-            const msg = `Hello Enshrine!%0A%0AI want to enquire about: ${encodeURIComponent(data.product || 'a custom product')}%0AName: ${encodeURIComponent(data.name || 'Not provided')}%0APhone: ${encodeURIComponent(data.phone || 'Not provided')}%0ADetails: ${encodeURIComponent(data.details || 'Not provided')}`
-            window.open(`https://wa.me/919021282176?text=${msg}`, '_blank')
-            showToast('Opening WhatsApp with your enquiry…')
-            setShowCustomModal(false)
+          onSubmit={async (data) => {
+            try {
+              // Send email via EmailJS
+              const templateParams = {
+                to_email: "your-email@example.com", // Replace with your email
+                from_name: data.name,
+                from_email: data.phone,
+                product: data.product || 'Custom enquiry',
+                details: data.details,
+                file: data.file || 'No file attached'
+              }
+
+              await emailjs.send(
+                "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+                "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+                templateParams
+              )
+
+              showToast('Enquiry sent successfully!')
+              setShowCustomModal(false)
+            } catch (error) {
+              console.error('Email error:', error)
+              showToast('Failed to send enquiry. Please try again.')
+            }
           }}
         />
       )}

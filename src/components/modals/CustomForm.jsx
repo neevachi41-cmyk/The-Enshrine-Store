@@ -5,11 +5,19 @@ const CustomForm = forwardRef(({ initialProduct, onSubmit }, ref) => {
     name: '',
     phone: '',
     product: initialProduct || '',
-    details: ''
+    details: '',
+    file: null
   })
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value })
+  }
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]
+    if (file) {
+      setFormData({ ...formData, file: file.name })
+    }
   }
 
   return (
@@ -45,6 +53,18 @@ const CustomForm = forwardRef(({ initialProduct, onSubmit }, ref) => {
           onChange={(e) => handleChange('details', e.target.value)}
           placeholder="Photo, name, quote, colour, size, reference idea..."
         />
+      </div>
+      <div className="field full">
+        <label>Attach File (Photo, STL, Reference)</label>
+        <input
+          type="file"
+          onChange={handleFileChange}
+          accept="image/*,.stl,.obj,.3mf,.step,.iges,.pdf"
+          style={{ padding: '8px' }}
+        />
+        <p style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '4px' }}>
+          Supported: Images, STL, 3D files, PDF
+        </p>
       </div>
     </form>
   )

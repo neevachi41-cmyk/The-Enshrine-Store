@@ -151,6 +151,179 @@ export const DEMO_PRODUCTS = [
       "Long-lasting rechargeable battery",
       "Great for branding and personalization"
     ]
+  },
+  {
+    id: "botanical-cube",
+    cat: "Lamps",
+    sub: "Botanical Lamps",
+    name: "Warm Botanical Cube Lamps",
+    desc: "Beautiful cube-shaped lamps featuring intricate botanical designs with warm ambient lighting. Perfect for adding nature-inspired elegance to any space.",
+    price: "₹1,999",
+    originalPrice: "₹3,499",
+    discount: "43%",
+    img: "/assets/Warm Botanical Cube Lamps.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Unique cube design with botanical patterns",
+      "Warm ambient LED lighting",
+      "Venus flytrap and floral designs",
+      "Handcrafted acrylic construction",
+      "Perfect for bedrooms, living rooms & offices"
+    ]
+  },
+  {
+    id: "glow-figure-lamp",
+    cat: "Lamps",
+    sub: "Figure Lamps",
+    name: "Cozy Glow Figure Lamp",
+    desc: "A charming figure-shaped lamp with a warm glowing base that creates a cozy atmosphere. The perfect companion for your bedside or desk.",
+    price: "₹1,499",
+    originalPrice: "₹2,499",
+    discount: "40%",
+    img: "/assets/Cozy Glow Figure Lamp.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Adorable figure design with warm glow",
+      "Soft ambient lighting for cozy vibes",
+      "Compact size perfect for desks and nightstands",
+      "Energy-efficient LED technology",
+      "Great gift for all ages"
+    ]
+  },
+  {
+    id: "pixel-lantern",
+    cat: "Lamps",
+    sub: "Pixel Lamps",
+    name: "Cozy Pixel Lantern Good Vibes",
+    desc: "A retro pixel-art style lantern with glowing squares that create a nostalgic ambiance. Features a 'Good Vibes' aesthetic perfect for modern spaces.",
+    price: "₹1,299",
+    originalPrice: "₹2,199",
+    discount: "41%",
+    img: "/assets/Cozy Pixel Lantern Good Vibes.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Retro pixel-art lantern design",
+      "Glowing orange and white LED squares",
+      "Good Vibes aesthetic",
+      "Battery-powered for portability",
+      "Perfect for gaming setups and cozy corners"
+    ]
+  },
+  {
+    id: "lavender-pearl-lamp",
+    cat: "Lamps",
+    sub: "Pearl Lamps",
+    name: "Dreamy Lavender Pearl Lamp",
+    desc: "A stunning pearl-shaped lamp with a soft lavender glow, surrounded by decorative beads. Creates a dreamy, romantic atmosphere perfect for bedrooms.",
+    price: "₹2,499",
+    originalPrice: "₹3,999",
+    discount: "38%",
+    img: "/assets/Dreamy Lavender Pearl Lamp Still Life.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Elegant pearl-shaped design",
+      "Soft lavender ambient lighting",
+      "Decorative bead accents",
+      "Perfect for romantic settings",
+      "Ideal bedroom decor piece"
+    ]
+  },
+  {
+    id: "couple-moon-lamp",
+    cat: "Lamps",
+    sub: "Moon Lamps",
+    name: "Engraved Couple Moon Lamp",
+    desc: "A beautifully engraved moon lamp featuring a couple embracing. Warm yellow illumination creates a romantic and sentimental atmosphere. Perfect for couples.",
+    price: "₹2,999",
+    originalPrice: "₹4,999",
+    discount: "40%",
+    img: "/assets/Engraved Couple Moon Lamp.png",
+    custom: true,
+    stock: "Made to Order",
+    features: [
+      "Custom engraved couple design",
+      "Realistic moon texture",
+      "Warm yellow LED illumination",
+      "Geometric stand included",
+      "Perfect anniversary or wedding gift"
+    ]
+  },
+  {
+    id: "artichoke-pendants",
+    cat: "Lamps",
+    sub: "Pendant Lamps",
+    name: "Glowing Artichoke Pendants",
+    desc: "Unique artichoke-shaped pendant lamps that emit a warm orange glow, creating a stunning purple ambiance. Perfect for dining areas and living rooms.",
+    price: "₹3,499",
+    originalPrice: "₹5,999",
+    discount: "42%",
+    img: "/assets/Glowing Artichoke Pendants in Purple Ambience.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Unique artichoke-shaped design",
+      "Warm orange LED illumination",
+      "Creates beautiful purple ambiance",
+      "Premium glass construction",
+      "Perfect for dining and living rooms"
+    ]
+  },
+  {
+    id: "purple-moon-lamp",
+    cat: "Lamps",
+    sub: "Moon Lamps",
+    name: "Glowing Moon Lamp in Purple Dreamscape",
+    desc: "A stunning moon lamp that creates a dreamy purple dreamscape atmosphere. Features realistic moon texture with warm glow on a sleek black tripod stand.",
+    price: "₹2,799",
+    originalPrice: "₹4,499",
+    discount: "38%",
+    img: "/assets/Glowing Moon Lamp in Purple Dreamscape.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Realistic moon texture design",
+      "Warm ambient glow effect",
+      "Black tripod stand included",
+      "Creates purple dreamscape ambiance",
+      "Perfect for bedrooms and relaxation spaces"
+    ]
+  },
+  {
+    id: "relief-frames",
+    cat: "Lamps",
+    sub: "Relief Frames",
+    name: "Romantic Illuminated Relief Frames",
+    desc: "Beautiful relief frames featuring illuminated 3D couple portraits. When lit, they create a warm, romantic glow perfect for displaying cherished memories.",
+    price: "₹3,999",
+    originalPrice: "₹6,999",
+    discount: "43%",
+    img: "/assets/Romantic Illuminated Relief Frames.png",
+    custom: true,
+    stock: "Made to Order",
+    features: [
+      "Custom 3D relief portrait",
+      "Warm illuminated display",
+      "Romantic couple design",
+      "Premium frame quality",
+      "Perfect anniversary or wedding gift"
+    ]
+  },
+  {
+    id: "twisted-glow-lamp",
+    cat: "Lamps",
+    sub: "Glow Lamps",
+    name: "Twisted Glow Lamp in Purple Ambiance",
+    desc: "A uniquely twisted lamp design that emits a beautiful purple glow. The artistic spiral structure creates a mesmerizing light pattern in any room.",
+    price: "₹2,199",
+    originalPrice: "₹3,799",
+    discount: "42%",
+    img: "/assets/Twisted Glow Lamp in Purple Ambiance.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Unique twisted spiral design",
+      "Beautiful purple ambient glow",
+      "Artistic structure",
+      "Energy-efficient LED",
+      "Perfect for modern and aesthetic spaces"
+    ]
   }
 ];
 

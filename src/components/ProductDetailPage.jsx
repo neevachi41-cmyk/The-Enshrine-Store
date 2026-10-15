@@ -3,6 +3,47 @@ import { useState } from 'react'
 function ProductDetailPage({ product, onClose, onAddToCart, onBuyNow }) {
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
+  const [selectedColor, setSelectedColor] = useState('White')
+
+  const colorOptions = [
+    { name: 'White', value: '#FFFFFF' },
+    { name: 'Red', value: '#FF0000' },
+    { name: 'Blue', value: '#0000FF' },
+    { name: 'Green', value: '#008000' },
+    { name: 'Yellow', value: '#FFFF00' },
+    { name: 'Orange', value: '#FFA500' },
+    { name: 'Purple', value: '#800080' },
+    { name: 'Gray', value: '#808080' },
+    { name: 'Silver', value: '#C0C0C0' }
+  ]
+
+  const getColorFilter = (colorName) => {
+    const color = colorOptions.find(c => c.name === colorName)
+    if (!color) return 'none'
+    
+    switch(colorName) {
+      case 'White':
+        return 'none'
+      case 'Red':
+        return 'sepia(1) saturate(10) hue-rotate(-50deg)'
+      case 'Blue':
+        return 'sepia(1) saturate(10) hue-rotate(180deg)'
+      case 'Green':
+        return 'sepia(1) saturate(10) hue-rotate(90deg)'
+      case 'Yellow':
+        return 'sepia(1) saturate(10) hue-rotate(10deg)'
+      case 'Orange':
+        return 'sepia(1) saturate(10) hue-rotate(-20deg)'
+      case 'Purple':
+        return 'sepia(1) saturate(10) hue-rotate(240deg)'
+      case 'Gray':
+        return 'grayscale(1) brightness(0.8)'
+      case 'Silver':
+        return 'grayscale(0.3) brightness(1.2)'
+      default:
+        return 'none'
+    }
+  }
 
   if (!product) return null
 
@@ -32,6 +73,9 @@ function ProductDetailPage({ product, onClose, onAddToCart, onBuyNow }) {
               src={images[selectedImage]}
               alt={product.name}
               className="main-image"
+              style={{
+                filter: getColorFilter(selectedColor)
+              }}
             />
           </div>
 
@@ -78,6 +122,23 @@ function ProductDetailPage({ product, onClose, onAddToCart, onBuyNow }) {
             </div>
           )}
 
+          <div className="color-section">
+            <label>Color</label>
+            <div className="color-selector">
+              {colorOptions.map((color) => (
+                <button
+                  key={color.name}
+                  className={`color-option ${selectedColor === color.name ? 'selected' : ''}`}
+                  onClick={() => setSelectedColor(color.name)}
+                  title={color.name}
+                >
+                  <span className="color-swatch" style={{ backgroundColor: color.value }}></span>
+                  <span className="color-name">{color.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="quantity-section">
             <label>Quantity</label>
             <div className="quantity-selector">
@@ -99,14 +160,14 @@ function ProductDetailPage({ product, onClose, onAddToCart, onBuyNow }) {
           <div className="action-buttons">
             <button
               className="btn add-to-cart"
-              onClick={() => onAddToCart(product, quantity)}
+              onClick={() => onAddToCart(product, quantity, selectedColor)}
             >
               <span className="cart-icon">🛒</span>
               Add to Cart
             </button>
             <button
               className="btn buy-now"
-              onClick={() => onBuyNow(product, quantity)}
+              onClick={() => onBuyNow(product, quantity, selectedColor)}
             >
               Buy Now
             </button>

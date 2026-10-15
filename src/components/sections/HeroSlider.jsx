@@ -48,8 +48,6 @@ function HeroSlider({ updates, onShopClick, onViewClick }) {
               />
             </div>
             <div className="slide-content">
-              <h2>{update.title}</h2>
-              <p>{update.description}</p>
               <div className="slide-buttons">
                 <button className="btn primary slide-button" onClick={onShopClick}>
                   {update.button}

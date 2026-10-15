@@ -1,24 +1,5 @@
 export const DEMO_PRODUCTS = [
   {
-    id: "mascot-lamp",
-    cat: "Lamps",
-    sub: "Glow Lamps",
-    name: "Mascot Glow Lamp",
-    desc: "Your FIZZ mascot turned into a soft ambient desk light. This adorable lamp brings character to any space with its warm, gentle glow.",
-    price: "₹899",
-    originalPrice: "₹1,499",
-    discount: "40%",
-    img: "/assets/mascot-happy.png",
-    stock: "In Stock - Ready to Ship",
-    features: [
-      "Adorable mascot design with soft ambient lighting",
-      "Perfect for desk, nightstand or shelf",
-      "Premium 3D printed finish",
-      "Warm LED glow for cozy vibes",
-      "Ideal gift for desk setup enthusiasts"
-    ]
-  },
-  {
     id: "mini-bot",
     cat: "OLED & Electronics",
     sub: "Desk Companions",
@@ -35,26 +16,6 @@ export const DEMO_PRODUCTS = [
       "Battery-powered wireless design",
       "Multiple mood modes available",
       "Perfect desk companion for tech lovers"
-    ]
-  },
-  {
-    id: "memory-light",
-    cat: "Lamps",
-    sub: "Memory Lamps",
-    name: "Memory Light",
-    desc: "Turn a favourite photo into a warm keepsake. Upload your photo and we'll create a personalized lamp that glows with your memories.",
-    price: "₹1,299",
-    originalPrice: "₹1,999",
-    discount: "35%",
-    img: "/assets/face-lamp.png",
-    custom: true,
-    stock: "Made to Order",
-    features: [
-      "Custom photo printed on lamp shade",
-      "Soft warm LED illumination",
-      "Perfect for memorializing special moments",
-      "Great gift for anniversaries & birthdays",
-      "Personalized with your chosen photo"
     ]
   },
   {
@@ -112,25 +73,6 @@ export const DEMO_PRODUCTS = [
       "Compact design fits beside monitors",
       "Interactive touch sensors",
       "Perfect for tech enthusiasts"
-    ]
-  },
-  {
-    id: "night-lamp",
-    cat: "Lamps",
-    sub: "Ambient Lights",
-    name: "Night Mode Lamp",
-    desc: "Minimal ambient light for late-night desks and rooms. Soft, warm glow that's perfect for working late or relaxing.",
-    price: "₹999",
-    originalPrice: "₹1,599",
-    discount: "38%",
-    img: "/assets/lamp-character.png",
-    stock: "In Stock - Ready to Ship",
-    features: [
-      "Minimalist modern design",
-      "Adjustable brightness levels",
-      "Soft warm LED for late-night use",
-      "Touch controls for easy operation",
-      "Perfect for bedrooms & home offices"
     ]
   },
   {

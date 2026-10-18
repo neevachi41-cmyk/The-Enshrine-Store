@@ -255,7 +255,7 @@ header {
   justify-content: center;
   z-index: 2;
   position: absolute;
-  bottom: 100px;
+  bottom: 140px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -1721,7 +1721,7 @@ footer {
   }
 
   .slide-buttons {
-    bottom: 60px;
+    bottom: 80px;
     gap: 12px;
   }
 

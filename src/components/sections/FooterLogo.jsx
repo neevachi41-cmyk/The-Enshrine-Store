@@ -3,7 +3,25 @@ function FooterLogo() {
     <div>
       <img
         className="footer-logo"
-        src="/assets/logo.png"
+        src="/assets/Logo.png"
+        alt="Enshrine"
+        style={{
+          height: '50px',
+          width: 'auto',
+          maxWidth: '180px',
+          objectFit: 'contain',
+          display: 'block',
+          marginBottom: '8px',
+          opacity: 0.95
+        }}
+        onError={(e) => {
+          console.error('Footer logo failed to load:', e.target.src);
+          e.target.style.display = 'none';
+        }}
+      />
+      <img
+        className="footer-logo"
+        src="/assets/footer logo.png"
         alt="Enshrine"
         style={{
           height: '60px',
@@ -12,7 +30,6 @@ function FooterLogo() {
           objectFit: 'contain',
           display: 'block',
           marginBottom: '12px',
-          filter: 'brightness(0) invert(1)',
           opacity: 0.95
         }}
         onError={(e) => {

@@ -8,9 +8,13 @@ function ProductForm({ product, categories, onSave, onCancel }) {
     sub: 'Glow Lamps',
     name: 'New Product',
     desc: '',
-    price: 'From ₹',
-    img: '/assets/mascot-gift.png',
-    custom: false
+    price: '₹999',
+    originalPrice: '₹1,499',
+    discount: '33%',
+    img: '/assets/logo.png',
+    stock: 'In Stock - Ready to Ship',
+    custom: false,
+    features: []
   })
 
   const handleSubmit = () => {
@@ -51,10 +55,31 @@ function ProductForm({ product, categories, onSave, onCancel }) {
             />
           </div>
           <div className="field">
-            <label>Price label</label>
+            <label>Price</label>
             <input
               value={formData.price}
               onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+            />
+          </div>
+          <div className="field">
+            <label>Original Price</label>
+            <input
+              value={formData.originalPrice}
+              onChange={(e) => setFormData({ ...formData, originalPrice: e.target.value })}
+            />
+          </div>
+          <div className="field">
+            <label>Discount</label>
+            <input
+              value={formData.discount}
+              onChange={(e) => setFormData({ ...formData, discount: e.target.value })}
+            />
+          </div>
+          <div className="field">
+            <label>Stock Status</label>
+            <input
+              value={formData.stock}
+              onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
             />
           </div>
           <div className="field">
@@ -69,6 +94,14 @@ function ProductForm({ product, categories, onSave, onCancel }) {
             <textarea
               value={formData.desc}
               onChange={(e) => setFormData({ ...formData, desc: e.target.value })}
+            />
+          </div>
+          <div className="field full">
+            <label>Features (one per line)</label>
+            <textarea
+              value={formData.features ? formData.features.join('\n') : ''}
+              onChange={(e) => setFormData({ ...formData, features: e.target.value.split('\n').filter(f => f.trim()) })}
+              placeholder="Feature 1&#10;Feature 2&#10;Feature 3"
             />
           </div>
           <div className="field">

@@ -1,0 +1,25 @@
+// FIREBASE INITIALIZATION INSTRUCTIONS
+// ====================================
+
+// STEP 1: Update your Firebase config in src/firebase.js
+// Replace the placeholder values with your actual Firebase project config:
+// - YOUR_API_KEY
+// - YOUR_PROJECT_ID
+// - YOUR_MESSAGING_SENDER_ID
+// - YOUR_APP_ID
+
+// STEP 2: Initialize Firebase database with demo products
+// Open your browser console (F12) when the app is running and paste this code:
+
+import { set, productsRef } from './firebase'
+import { DEMO_PRODUCTS } from './data'
+
+// Run this in the browser console:
+set(productsRef, DEMO_PRODUCTS).then(() => {
+  console.log('✅ Demo products initialized in Firebase!')
+}).catch((error) => {
+  console.error('❌ Error:', error)
+})
+
+// ALTERNATIVE: The first time you save a product from the admin panel,
+// it will automatically create the database structure.

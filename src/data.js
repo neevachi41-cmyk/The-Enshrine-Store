@@ -266,10 +266,352 @@ export const DEMO_PRODUCTS = [
       "Energy-efficient LED",
       "Perfect for modern and aesthetic spaces"
     ]
+  },
+  {
+    id: "sproutie-robot",
+    cat: "OLED & Electronics",
+    sub: "Desk Companions",
+    name: "Sproutie Robot Companion",
+    desc: "Meet the Sproutie - a cute desk companion with an expressive face to brighten up your workspace. Perfect for your desk or shelf.",
+    price: "₹1,499",
+    originalPrice: "₹2,499",
+    discount: "40%",
+    img: "/assets/Meet the Sproutie Robot Companions.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Expressive animated face display",
+      "Compact size fits any desk setup",
+      "Battery-powered wireless design",
+      "Multiple mood modes available",
+      "Perfect desk companion for all ages"
+    ]
+  },
+  {
+    id: "music-keychain",
+    cat: "OLED & Electronics",
+    sub: "Keychains",
+    name: "Music Keychain",
+    desc: "A stylish music-themed keychain with LED display. Show your love for music with this compact accessory.",
+    price: "₹499",
+    originalPrice: "₹799",
+    discount: "38%",
+    img: "/assets/Music Keychain White.jpeg",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Music-themed design",
+      "Compact and portable",
+      "Durable construction",
+      "Perfect for music lovers",
+      "Great gift accessory"
+    ]
+  },
+  {
+    id: "desk-sign",
+    cat: "3D Printed Decor",
+    sub: "Desk Objects",
+    name: "Sara's Enchanted Desk Sign",
+    desc: "A magical desk sign to add charm to your workspace. Perfect for personalizing your desk with an enchanted touch.",
+    price: "₹1,299",
+    originalPrice: "₹1,999",
+    discount: "35%",
+    img: "/assets/Sara's Enchanted Desk Sign.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Enchanted design for your desk",
+      "High-quality 3D printed finish",
+      "Personalized touch",
+      "Perfect shelf or desk decor",
+      "Great collectible"
+    ]
+  },
+  {
+    id: "astronaut-pen-holder",
+    cat: "Pen Holders",
+    sub: "Themed Holders",
+    name: "Astronaut Figurine Pen Holder",
+    desc: "A fun astronaut-themed pen holder with a purple glow. Keep your desk organized while adding a space-themed touch.",
+    price: "₹899",
+    originalPrice: "₹1,499",
+    discount: "40%",
+    img: "/assets/Astronaut Figurine Pen Holder in Purple Glow.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Astronaut figurine design",
+      "Purple glow effect",
+      "Holds pens and pencils",
+      "Great for space enthusiasts",
+      "Perfect desk organizer"
+    ]
+  },
+  {
+    id: "ninja-pen-holder",
+    cat: "Pen Holders",
+    sub: "Themed Holders",
+    name: "Ninja Pen Holder Desk Vignette",
+    desc: "A stealthy ninja-themed pen holder for your desk. Organize your writing tools with this cool desk accessory.",
+    price: "₹799",
+    originalPrice: "₹1,299",
+    discount: "38%",
+    img: "/assets/Ninja Pen Holder Desk Vignette.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Cool ninja design",
+      "Holds multiple pens",
+      "Perfect for study nooks",
+      "Fun desk accessory",
+      "Great for all ages"
+    ]
+  },
+  {
+    id: "pastel-pen-holder",
+    cat: "Pen Holders",
+    sub: "Pastel Holders",
+    name: "Pastel Mint Pen Holder Study Nook",
+    desc: "A pastel mint pen holder perfect for creating a cozy study nook. Soft colors and practical design.",
+    price: "₹699",
+    originalPrice: "₹1,199",
+    discount: "42%",
+    img: "/assets/Pastel Mint Pen Holder Study Nook.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Pastel mint color scheme",
+      "Perfect for study setups",
+      "Holds pens and stationery",
+      "Aesthetic design",
+      "Great for students"
+    ]
+  },
+  {
+    id: "pen-holder-1",
+    cat: "Pen Holders",
+    sub: "Classic Holders",
+    name: "Classic Pen Holder 1",
+    desc: "A classic pen holder design for your desk. Simple and elegant organization for your writing tools.",
+    price: "₹599",
+    originalPrice: "₹999",
+    discount: "40%",
+    img: "/assets/Pen_Holder_1.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Classic design",
+      "Holds multiple pens",
+      "Simple and elegant",
+      "Perfect for offices",
+      "Great for daily use"
+    ]
+  },
+  {
+    id: "pen-holder-2",
+    cat: "Pen Holders",
+    sub: "Classic Holders",
+    name: "Classic Pen Holder 2",
+    desc: "Another classic pen holder option with a different design. Keep your pens organized in style.",
+    price: "₹599",
+    originalPrice: "₹999",
+    discount: "40%",
+    img: "/assets/Pen_Holder_2.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Classic design variant",
+      "Holds multiple pens",
+      "Simple and elegant",
+      "Perfect for offices",
+      "Great for daily use"
+    ]
+  },
+  {
+    id: "pen-holder-3",
+    cat: "Pen Holders",
+    sub: "Classic Holders",
+    name: "Classic Pen Holder 3",
+    desc: "A third classic pen holder design. Choose the style that fits your desk best.",
+    price: "₹599",
+    originalPrice: "₹999",
+    discount: "40%",
+    img: "/assets/Pen_Holder_3.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Classic design variant",
+      "Holds multiple pens",
+      "Simple and elegant",
+      "Perfect for offices",
+      "Great for daily use"
+    ]
+  },
+  {
+    id: "pen-holder-4",
+    cat: "Pen Holders",
+    sub: "Classic Holders",
+    name: "Classic Pen Holder 4",
+    desc: "A fourth classic pen holder design. Complete your desk organization with this holder.",
+    price: "₹599",
+    originalPrice: "₹999",
+    discount: "40%",
+    img: "/assets/Pen_Holder_4.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Classic design variant",
+      "Holds multiple pens",
+      "Simple and elegant",
+      "Perfect for offices",
+      "Great for daily use"
+    ]
+  },
+  {
+    id: "dreamy-lavender-candle",
+    cat: "Decor",
+    sub: "Candle Vignettes",
+    name: "Dreamy Lavender Candle Vignette",
+    desc: "A dreamy lavender-themed candle vignette that creates a calming atmosphere. Perfect for relaxation and self-care moments.",
+    price: "₹799",
+    originalPrice: "₹1,299",
+    discount: "38%",
+    img: "/assets/Dreamy Lavender Candle Vignette.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Lavender-scented candles",
+      "Dreamy aesthetic design",
+      "Calming ambiance",
+      "Perfect for relaxation",
+      "Great self-care gift"
+    ]
+  },
+  {
+    id: "dreamy-lavender-jewelry",
+    cat: "Decor",
+    sub: "Jewelry Storage",
+    name: "Dreamy Lavender Jewelry Vanity",
+    desc: "A beautiful lavender-themed jewelry vanity for organizing your precious accessories. Dreamy aesthetic meets practical storage.",
+    price: "₹1,499",
+    originalPrice: "₹2,499",
+    discount: "40%",
+    img: "/assets/Dreamy Lavender Jewelry Vanity.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Lavender color scheme",
+      "Jewelry organizer",
+      "Dreamy aesthetic",
+      "Perfect for vanities",
+      "Great for organizing"
+    ]
+  },
+  {
+    id: "dreamy-pastel-mirror",
+    cat: "Decor",
+    sub: "Mirrors",
+    name: "Dreamy Pastel Wavy Mirror Vanity",
+    desc: "A dreamy pastel wavy mirror perfect for your vanity setup. Adds a whimsical touch to your daily routine.",
+    price: "₹1,799",
+    originalPrice: "₹2,999",
+    discount: "40%",
+    img: "/assets/Dreamy Pastel Wavy Mirror Vanity.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Wavy mirror design",
+      "Pastel colors",
+      "Perfect for vanities",
+      "Whimsical aesthetic",
+      "Great for makeup stations"
+    ]
+  },
+  {
+    id: "dreamy-purple-vanity",
+    cat: "Decor",
+    sub: "Jewelry Display",
+    name: "Dreamy Purple Vanity Jewelry Display",
+    desc: "A stunning purple vanity jewelry display case. Show off your jewelry collection in style with this dreamy display.",
+    price: "₹1,999",
+    originalPrice: "₹3,499",
+    discount: "43%",
+    img: "/assets/Dreamy Purple Vanity Jewelry Display.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Purple themed display",
+      "Jewelry showcase",
+      "Dreamy aesthetic",
+      "Perfect for collections",
+      "Great for dressing rooms"
+    ]
+  },
+  {
+    id: "lavender-heart-tray",
+    cat: "Decor",
+    sub: "Trays",
+    name: "Lavender Heart Tray Jewelry Still Life",
+    desc: "A charming lavender heart-shaped tray for organizing jewelry or small items. A beautiful still-life piece for any space.",
+    price: "₹699",
+    originalPrice: "₹1,199",
+    discount: "42%",
+    img: "/assets/Lavender Heart Tray Jewelry Still Life.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Heart-shaped design",
+      "Lavender color",
+      "Jewelry organizer",
+      "Decorative piece",
+      "Perfect for gifts"
+    ]
+  },
+  {
+    id: "cozy-mint-vanity",
+    cat: "Decor",
+    sub: "Vanities",
+    name: "Cozy Mint Makeup Brush Vanity",
+    desc: "A cozy mint-themed makeup brush vanity organizer. Keep your brushes organized in style with this aesthetic piece.",
+    price: "₹899",
+    originalPrice: "₹1,499",
+    discount: "40%",
+    img: "/assets/Cozy Mint Makeup Brush Vanity.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Mint color scheme",
+      "Makeup brush organizer",
+      "Cozy aesthetic",
+      "Perfect for vanities",
+      "Great for makeup lovers"
+    ]
+  },
+  {
+    id: "cozy-yellow-organizer",
+    cat: "Desk Organizers",
+    sub: "Desk Organizers",
+    name: "Cozy Yellow Desk Organizer Glow",
+    desc: "A cozy yellow desk organizer with a warm glow effect. Brighten up your workspace while staying organized.",
+    price: "₹999",
+    originalPrice: "₹1,699",
+    discount: "41%",
+    img: "/assets/Cozy Yellow Desk Organizer Glow.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Yellow color scheme",
+      "Glow effect",
+      "Desk organizer",
+      "Cozy aesthetic",
+      "Perfect for offices"
+    ]
+  },
+  {
+    id: "modular-desk-organizer",
+    cat: "Desk Organizers",
+    sub: "Desk Organizers",
+    name: "Modular Desk Organization",
+    desc: "A modular desk organization system that adapts to your needs. Customize your workspace with this versatile organizer.",
+    price: "₹1,299",
+    originalPrice: "₹2,199",
+    discount: "41%",
+    img: "/assets/Modular desk organizatoin_1.png",
+    stock: "In Stock - Ready to Ship",
+    features: [
+      "Modular design",
+      "Customizable layout",
+      "Multiple compartments",
+      "Perfect for desks",
+      "Great for productivity"
+    ]
   }
 ];
 
-export const CATS = ["Lamps", "OLED & Electronics", "3D Printed Decor"];
+export const CATS = ["Lamps", "OLED & Electronics", "3D Printed Decor", "Pen Holders", "Decor", "Desk Organizers"];
 
 export const THEME_DATA = {
   female: {
@@ -335,37 +677,37 @@ export const REVIEWS = [
   {
     id: 1,
     name: "Priya Sharma",
-    product: "Custom Memory Lamp",
+    product: "Engraved Couple Moon Lamp",
     rating: 5,
     review: "Absolutely loved my custom lamp! The photo quality is amazing and the glow is so warm. Perfect gift for my mom's birthday.",
-    image: "/assets/face-lamp.png",
+    image: "/assets/Engraved Couple Moon Lamp.png",
     date: "Oct 2026"
   },
   {
     id: 2,
     name: "Rahul Mehta",
-    product: "Mini Mood Bot",
+    product: "Sproutie Robot Companion",
     rating: 5,
     review: "The OLED expressions are so cute! It sits on my desk and makes me smile every day. Great build quality too.",
-    image: "/assets/robot-sprue.png",
+    image: "/assets/Meet the Sproutie Robot Companions.png",
     date: "Oct 2026"
   },
   {
     id: 3,
     name: "Ananya Patel",
-    product: "Mascot Desk Buddy",
+    product: "Sara's Enchanted Desk Sign",
     rating: 4,
     review: "Super cute and well-made. The 3D printing quality is excellent. Would definitely order more for friends!",
-    image: "/assets/mascot-gift.png",
+    image: "/assets/Sara's Enchanted Desk Sign.png",
     date: "Sep 2026"
   },
   {
     id: 4,
     name: "Vikram Singh",
-    product: "Night Mode Lamp",
+    product: "Cozy Glow Figure Lamp",
     rating: 5,
     review: "Perfect for late-night coding sessions. The ambient light is just right - not too bright, not too dim. Love the minimalist design.",
-    image: "/assets/lamp-character.png",
+    image: "/assets/Cozy Glow Figure Lamp.png",
     date: "Sep 2026"
   }
 ];

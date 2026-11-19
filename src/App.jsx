@@ -12,6 +12,7 @@ import SearchModal from './components/SearchModal'
 import AdminPanel from './components/AdminPanel'
 import About from './components/About'
 import { DEMO_PRODUCTS, CATS, THEME_DATA, UPDATES, REVIEWS } from './data'
+import { productsRef, adminRef, set, get, onValue } from './firebase'
 
 function App() {
   const location = useLocation()
@@ -27,12 +28,35 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [toast, setToast] = useState('')
   const [isAdmin, setIsAdmin] = useState(false)
+  const [adminCredentials, setAdminCredentials] = useState({ email: 'admin@gmail.com', password: '123admin' })
 
   useEffect(() => {
-    const savedProducts = localStorage.getItem('fizzProducts')
-    if (savedProducts) {
-      setProducts(JSON.parse(savedProducts))
-    }
+    // Load products from Firebase
+    const productsUnsubscribe = onValue(productsRef, (snapshot) => {
+      const data = snapshot.val()
+      if (data) {
+        const productsArray = Object.values(data)
+        setProducts(productsArray)
+      } else {
+        // If no products in Firebase, load demo products
+        setProducts(DEMO_PRODUCTS)
+      }
+    }, (error) => {
+      console.error('Firebase error:', error)
+      // Fallback to demo products on error
+      setProducts(DEMO_PRODUCTS)
+    })
+
+    // Load admin credentials from Firebase
+    const adminUnsubscribe = onValue(adminRef, (snapshot) => {
+      const data = snapshot.val()
+      if (data) {
+        setAdminCredentials(data)
+      }
+    }, (error) => {
+      console.error('Firebase admin error:', error)
+    })
+
     const adminSession = sessionStorage.getItem('fizzAdmin')
     if (adminSession === '1') {
       setIsAdmin(true)
@@ -40,11 +64,23 @@ function App() {
 
     // Initialize EmailJS
     emailjs.init("YOUR_EMAILJS_PUBLIC_KEY")
+
+    // Cleanup listeners on unmount
+    return () => {
+      productsUnsubscribe()
+      adminUnsubscribe()
+    }
   }, [])
 
-  const saveProducts = (newProducts) => {
-    setProducts(newProducts)
-    localStorage.setItem('fizzProducts', JSON.stringify(newProducts))
+  const saveProducts = async (newProducts) => {
+    try {
+      await set(productsRef, newProducts)
+      setProducts(newProducts)
+      showToast('Products saved successfully')
+    } catch (error) {
+      console.error('Error saving products:', error)
+      showToast('Failed to save products')
+    }
   }
 
   const toggleTheme = () => {
@@ -92,12 +128,24 @@ function App() {
   }
 
   const handleLogin = (email, password) => {
-    if (email === 'admin@gmail.com' && password === '123admin') {
+    if (email === adminCredentials.email && password === adminCredentials.password) {
       setIsAdmin(true)
       sessionStorage.setItem('fizzAdmin', '1')
       showToast('Logged in successfully')
     } else {
       showToast('Incorrect admin credentials')
+    }
+  }
+
+  const handleUpdateAdmin = async (newEmail, newPassword) => {
+    try {
+      const newCredentials = { email: newEmail, password: newPassword }
+      await set(adminRef, newCredentials)
+      setAdminCredentials(newCredentials)
+      showToast('Admin credentials updated successfully')
+    } catch (error) {
+      console.error('Error updating admin credentials:', error)
+      showToast('Failed to update credentials')
     }
   }
 
@@ -152,12 +200,14 @@ function App() {
               <AdminPanel
                 products={products}
                 isAdmin={isAdmin}
+                adminCredentials={adminCredentials}
                 onLogin={handleLogin}
                 onLogout={handleLogout}
+                onUpdateAdmin={handleUpdateAdmin}
                 onBack={() => setShowAdmin(false)}
                 onSaveProducts={saveProducts}
-                onResetProducts={() => {
-                  saveProducts(DEMO_PRODUCTS)
+                onResetProducts={async () => {
+                  await saveProducts(DEMO_PRODUCTS)
                   showToast('Demo catalog restored')
                 }}
                 onProductClick={openProductInNewWindow}

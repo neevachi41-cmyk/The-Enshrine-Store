@@ -3,30 +3,12 @@ function FooterLogo() {
     <div>
       <img
         className="footer-logo"
-        src="/assets/Logo.png"
+        src="/assets/Enshine Store Magical Gift Logo.png"
         alt="Enshrine"
         style={{
-          height: '50px',
+          height: 'auto',
           width: 'auto',
-          maxWidth: '180px',
-          objectFit: 'contain',
-          display: 'block',
-          marginBottom: '8px',
-          opacity: 0.95
-        }}
-        onError={(e) => {
-          console.error('Footer logo failed to load:', e.target.src);
-          e.target.style.display = 'none';
-        }}
-      />
-      <img
-        className="footer-logo"
-        src="/assets/footer logo.png"
-        alt="Enshrine"
-        style={{
-          height: '60px',
-          width: 'auto',
-          maxWidth: '200px',
+          maxWidth: '250px',
           objectFit: 'contain',
           display: 'block',
           marginBottom: '12px',
